@@ -20,12 +20,13 @@ module.exports = {
 	  	.click('@menu');
 	  	browser
 	  	  .pause(1000);
-		  browser.expect.element('.pieregformWrapper').to.be.present.before(8000);
+		  browser.expect.element('.pieregformWrapper').to.be.present.before(5000);
 	},
 
-	'Registration page' : ''+function (browser) {
+	'Registration page' : function (browser) {
         var selector = ['#name_3_firstname', '#name_3_lastname', '#phone_9'];
-        var value = ['Gokul', 'Sridharan', '00447540579709'];
+        //var value = ['Gokul', 'Sridharan', '00447540579709'];
+        var value = [browser.globals.firstname, browser.globals.lastname, browser.globals.mobile];
 
         for(var i=0; i < selector.length; i++) {
 
@@ -47,10 +48,10 @@ module.exports = {
 		  .pause(1000)
 		  .click('#dropdown_7 option[value="India"]')
 		  .setValue('input#profile_pic_10', '/home/gokul/nightwatch/file/sample.txt')
-		  .pause(10000);
+		  .pause(3000);
 	},
 
-	'Password protector' : ''+function (browser) {
+	'Password protector' : function (browser) {
 		
 		var text = 'Te$ting2017';
 
@@ -65,10 +66,10 @@ module.exports = {
 		} else {
 			browser
 			  .setValue('#confirm_password_password_2', text)
-			  .pause(20000)
+			  .pause(3000)
 			  .useXpath()
 			  .click('//input[@name="pie_submit"]')
-			  .pause(5000);
+			  .pause(2000);
 		}
 
 		browser.end();
