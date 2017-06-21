@@ -19,6 +19,14 @@ module.exports = {
 		},
 		email: {
 			selector: '#email_1'
+		},
+		marriage: {
+			selector: '//*[@value="married"]',
+			locateStrategy: 'xpath'
+		},
+		checkbox: {
+			selector: '//input[contains(@value,"cricket") and contains(@type,"checkbox")]',
+			locateStrategy: 'xpath'
 		}
 	}	
 };

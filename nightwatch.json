@@ -12,7 +12,7 @@
     "log_path" : "",
     "port" : 4450,
     "cli_args" : {
-      "webdriver.gecko.driver" : "./bin/geckodriver"
+      "webdriver.chrome.driver" : "./bin/chromedriver"
     }
   },
 
@@ -48,6 +48,14 @@
       "desiredCapabilities": {
         "browserName": "phantomjs",
         "phantomjs.binary.path": "/usr/bin/phantomjs",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    },
+
+    "htmlunit" : {
+      "desiredCapabilities": {
+        "browserName": "htmlunit",
         "javascriptEnabled": true,
         "acceptSslCerts": true
       }

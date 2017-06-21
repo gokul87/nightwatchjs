@@ -25,7 +25,6 @@ module.exports = {
 
 	'Registration page' : function (browser) {
         var selector = ['#name_3_firstname', '#name_3_lastname', '#phone_9'];
-        //var value = ['Gokul', 'Sridharan', '00447540579709'];
         var value = [browser.globals.firstname, browser.globals.lastname, browser.globals.mobile];
 
         for(var i=0; i < selector.length; i++) {
@@ -36,18 +35,19 @@ module.exports = {
         }
 
         var generateRandom = browser.page.pom();
-
         generateRandom.number();
 
+
+        generateRandom
+        	.click('@marriage')
+        	.click('@checkbox');
+
         browser
-		  .useXpath()
-		  .click('//*[@value="married"]')
-		  .click('//input[contains(@value,"cricket") and contains(@type,"checkbox")]')
 		  .useCss()
 		  .click('#dropdown_7')
 		  .pause(1000)
 		  .click('#dropdown_7 option[value="India"]')
-		  .setValue('input#profile_pic_10', '/home/gokul/nightwatch/file/sample.txt')
+		  .setValue('input#profile_pic_10', './../file/sample.txt')
 		  .pause(3000);
 	},
 
