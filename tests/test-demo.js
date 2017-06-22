@@ -20,7 +20,7 @@ module.exports = {
 	  	.click('@menu');
 	  	browser
 	  	  .pause(1000);
-		  browser.expect.element('.pieregformWrap').to.be.present.before(5000);
+		  browser.expect.element('.pieregformWrapper').to.be.present.before(5000);
 	},
 
 	'Registration page' : function (browser) {
