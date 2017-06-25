@@ -1,0 +1,40 @@
+{
+  "name": "Gokul",
+  "version": "1.0.0",
+  "description": "Sample test suite created using nightwatch",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gokul87/nightwatchjs"
+  },
+  "main": "index.js",
+  "scripts": {
+    "generate-test-report": "cat ./reports/functional/cucumber.json | ./node_modules/.bin/cucumber-junit > reports/functional/report_junit.xml",
+    "func-test": "./node_modules/.bin/nightwatch"
+  },
+  "devDependencies": {
+    "chromedriver": "2.27.0",
+    "cucumber": "^2.3.0",
+    "cucumber-html-reporter": "^2.0.0",
+    "cucumber-junit": "^1.7.0",
+    "faker": "^4.1.0",
+    "geckodriver": "^1.5.0",
+    "nightwatch": "^0.9.14",
+    "nightwatch-cucumber": "^7.1.8",
+    "nightwatch-custom-commands-assertions": "^1.0.5",
+    "phantomjs-prebuilt": "~2.1.7",
+    "selenium-drivers": "^2.1.0",
+    "selenium-server": "^3.4.0"
+  },
+  "author": {
+    "name": "Mill Product Development",
+    "organization": "The Mill",
+    "url": "http://themill.com"
+  },
+  "license": "ISC",
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/gokul87/nightwatchjs/issues"
+  },
+  "homepage": "https://github.com/gokul87/nightwatchjs#readme"
+}
