@@ -44,6 +44,42 @@ module.exports = {
 				
 	        }
 	        return cmd;
+		},
+		generateEmail: function() {
+
+			return this.setValue('@username', 'test '+Math.floor((Math.random() * 1000) + 1))
+			   	   .setValue('@email', 'test'+Math.floor((Math.random() * 1000) + 1)+'@test.com')
+			   	   .click('@marriage')
+			   	   .click('@checkbox');
+		},
+		chooseDropDowns: function() {
+
+			return this.click('#dropdown_7', function() {
+					this.waitForElementVisible('#dropdown_7 option[value="India"]', 3000)
+						.click('#dropdown_7 option[value="India"]');
+			});
+		},
+		passwordProtector: function() {
+
+			var text = 'Te$ting2017';
+
+			var action = this.setValue('#password_2', text)
+		  		   .click('#page');
+
+		  		   if(text.length < 8) {
+			  		   	this.assert.elementPresent('.legend_txt .legend.error')
+			  		   		.assert
+			  		   		.containsText('.legend_txt .legend.error', '* Minimum 8 characters required')
+		  		   } else {
+		  		   		this
+							.setValue('#confirm_password_password_2', text)
+		  		   }
+		  	return action;
+		},
+		verifyFormSubmit: function() {
+			return this.click('.fieldset.piereg_submit_button>input', function() {
+								this.waitForElementVisible('.piereg_message', 3000)
+							})
 		}
 	}]
 }

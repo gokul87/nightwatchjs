@@ -14,12 +14,12 @@ defineSupportCode(({Given, Then, When, setDefaultTimeout}) => {
 
     When('I fill in the registration form', function () {
           return registerPage.fillForm()
+                 .generateEmail()
+                 .chooseDropDowns()
+                 .passwordProtector()
     });
 
-    // Then('I should be able to successfully register', function (callback) {
-    //      // Write code here that turns the phrase above into concrete actions
-    //      callback(null, 'pending');
-    // });
-
-
+    Then('I should be able to successfully register', function () {
+          return registerPage.verifyFormSubmit()
+    });
 });
