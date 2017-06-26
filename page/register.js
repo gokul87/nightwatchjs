@@ -36,9 +36,14 @@ module.exports = {
             for(var i=0; i < selector.length; i++) {
 
 	        	console.log("Number of array "+i);
-	 			return this
-	 				.setValue(selector[i], value[i]);
+	 			 var cmd = this.setValue(selector[i], value[i], function() {
+	 			 	console.log('form succesfully filled');
+	 			 })
+				 //.waitForElementVisible('#menu-item-144', 5000);
+
+				
 	        }
+	        return cmd;
 		}
 	}]
 }

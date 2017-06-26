@@ -4,7 +4,7 @@ const registerPage = client.page.register();
 
 defineSupportCode(({Given, Then, When, setDefaultTimeout}) => {
 
-	setDefaultTimeout(60 * 1000);
+	setDefaultTimeout(30 * 1000);
 
 	Given('I am on the site', function () {
          return registerPage.navigate()
