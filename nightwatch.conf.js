@@ -7,6 +7,7 @@ const geckodriver = require('geckodriver');
 
 require('nightwatch-cucumber')({
 	cucumberArgs: [
+        '--require', 'hooks.js',
 		'--require', 'features/step_definitions',
 		'--format', 'pretty',
 		'--format', 'json:reports/cucumber.json',
@@ -25,7 +26,6 @@ module.exports = {
     page_objects_path: 'page',
     live_output: true,
     disable_colors: false,
-    globals_path : "/home/tharu/Desktop/projects/nightwatchjs/data.js",
     selenium: {
         start_process: true,
         server_path: seleniumServer.path,

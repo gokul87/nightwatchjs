@@ -22,4 +22,13 @@ defineSupportCode(({Given, Then, When, setDefaultTimeout}) => {
     Then('I should be able to successfully register', function () {
           return registerPage.verifyFormSubmit()
     });
+
+    When('I click on \'ui-id{int}\'', function (int) {
+          return client.click('#ui-id'+int)
+    });
+
+    Then('respective tab \'Content {int} Title\' should be loaded', function (int) {
+          return client.assert.containsText('#tabs-'+int+' b', 'Content '+int+' Title')    
+    });
+
 });
