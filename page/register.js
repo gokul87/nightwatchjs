@@ -78,7 +78,7 @@ module.exports = {
 		},
 		verifyFormSubmit: function() {
 			return this.click('.fieldset.piereg_submit_button>input', function() {
-								this.waitForElementVisible('.piereg_message', 3000)
+								this.waitForElementVisible('.piereg_message', 6000)
 							})
 		}
 	}]

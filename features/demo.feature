@@ -1,15 +1,17 @@
-@register
 Feature: Registeration form
    As a user
    I want to be able to register on the site
    So that I can login to the site
 
+   @start
    Scenario: Register a user
      Given I am on the site
      When I fill in the registration form
      Then I should be able to successfully register
 
+   @end
    Scenario Outline: Verify tabs are loaded
+     Given I am on the page
      When I click on '<tabs>'
      Then respective tab '<contents>' should be loaded
 

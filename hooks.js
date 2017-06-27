@@ -2,12 +2,12 @@ const {client} = require('nightwatch-cucumber')
 const {defineSupportCode} = require('cucumber')
 
 defineSupportCode(({Before, After}) => {
-    Before(function (scenario) {
+    Before('@start', function () {
         console.log('Test Starts here');
         return client.init();
     });
 
-    After(function (scenario) {
+    After('@end', function () {
         console.log('Test Ends here');
     });
 })

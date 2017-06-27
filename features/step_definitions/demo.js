@@ -23,6 +23,10 @@ defineSupportCode(({Given, Then, When, setDefaultTimeout}) => {
           return registerPage.verifyFormSubmit()
     });
 
+    Given('I am on the page', function () {
+          return registerPage.navigate()
+       });
+
     When('I click on \'ui-id{int}\'', function (int) {
           return client.click('#ui-id'+int)
     });
